@@ -13,12 +13,15 @@ export default {data(){
         <span class="subtitulo-lg sua-lista-texto">
           Sua lista:
         </span>
-  
-        <ul class="ingredientes-sua-lista">
-          <li v-for="ingrediente in ingredientes" v-bind:key="ingrediente" class="ingrediente">
+        <ul v-if="ingredientes.length" class="ingredientes-sua-lista">
+          <li v-for="ingrediente in ingredientes" :key="ingrediente" class="ingrediente">
            {{ ingrediente }}
           </li>
         </ul>
+        <p v-else class="paragrafo lista-vazia">
+            <img src="/src/assets/images/icones/lista-vazia.svg" alt="Icone de pesquisa">
+            Sua lista esta vazia selecione ela para iniciar
+        </p>
       </section>
     </main>
   </template>
